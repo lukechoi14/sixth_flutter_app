@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sixth_flutter_app/pages/dashboard/dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: MyDashBoard(),
     );
   }
 }
