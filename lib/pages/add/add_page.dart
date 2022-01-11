@@ -1,15 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sixth_flutter_app/pages/add/add_controller.dart';
 
-class AddPage extends StatefulWidget {
-  const AddPage({Key? key}) : super(key: key);
+class AddPage extends GetView<AddController> {
 
-  @override
-  _AddPageState createState() => _AddPageState();
-}
-
-class _AddPageState extends State<AddPage> {
-  int counter=0;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -19,9 +14,8 @@ class _AddPageState extends State<AddPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                  "$counter"
-              ),
+              //controller에 있는 obs를 부를땐 꼭 Obx 함수로 부른다.
+              Obx(()=>Text("${controller.counter.value}")),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     primary:Colors.redAccent,
@@ -32,9 +26,7 @@ class _AddPageState extends State<AddPage> {
                 ),
                 child: Text("Increase"),
                 onPressed: (){
-                  setState(() {
-                    counter++;
-                  });
+                  controller.increaseCounter();
                 },
               ),
 
