@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
 
-class AddPage extends GetxController{
+class AddController extends GetxController{
 
 }
